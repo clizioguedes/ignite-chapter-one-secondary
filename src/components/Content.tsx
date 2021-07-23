@@ -1,7 +1,9 @@
 import { MovieCard } from "./MovieCard";
-import { MovieProps, GenreResponseProps } from "../App";
+import { MovieProps, GenreResponseProps } from "../models";
 
 import "../styles/content.scss";
+
+import { Header } from "./Header";
 interface ContentProps {
   movies: MovieProps[];
   selectedGenre: GenreResponseProps;
@@ -10,11 +12,7 @@ interface ContentProps {
 export function Content({ movies, selectedGenre }: ContentProps) {
   return (
     <div className="container">
-      <header>
-        <span className="category">
-          Categoria:<span> {selectedGenre.title}</span>
-        </span>
-      </header>
+      <Header title={selectedGenre.title} />
 
       <main>
         <div className="movies-list">
